@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const AppContext = createContext();
@@ -12,8 +12,17 @@ function AppProvider({ children }) {
     buttonClick: false,
   });
 
+  const [data, setData] = useState([]);
+
+  const values = useMemo(() => ({
+    input,
+    setInput,
+    data,
+    setData,
+  }), [input, data]);
+
   return (
-    <AppContext.Provider value={ { input, setInput } }>
+    <AppContext.Provider value={ values }>
       {children}
     </AppContext.Provider>
   );

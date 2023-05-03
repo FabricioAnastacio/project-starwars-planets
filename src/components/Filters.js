@@ -1,12 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AppContext } from '../context/AppContext';
 
 //
 export default function Filters(props) {
-  const { filterFunc, data } = props;
+  const { filterFunc, filterNumFunc, data } = props;
 
   const { input, setInput } = useContext(AppContext);
+
+  useEffect(() => {
+    filterFunc();
+  }, [input]);
 
   function chengeOn({ target }) {
     const { value, name } = target;
@@ -59,12 +63,7 @@ export default function Filters(props) {
       />
       <button
         data-testid="button-filter"
-        onClick={ () => {
-          setInput((oldState) => ({
-            ...oldState,
-            buttonClick: true,
-          }), filterFunc(data));
-        } }
+        onClick={ () => filterNumFunc(data) }
       >
         Filtrar
       </button>
@@ -74,6 +73,7 @@ export default function Filters(props) {
 
 Filters.propTypes = {
   filterFunc: PropTypes.func.isRequired,
+  filterNumFunc: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({}).isRequired,
   ).isRequired,

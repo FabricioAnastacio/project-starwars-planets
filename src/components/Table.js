@@ -6,13 +6,13 @@ import Filters from './Filters';
 //
 export default function TablePlanets() {
   const [
-    data,
+    dataInfo,
     loading,
     error,
     refresh,
   ] = useFetch('https://swapi.dev/api/planets');
 
-  const { input } = useContext(AppContext);
+  const { input, data, setData } = useContext(AppContext);
 
   useEffect(() => {
     refresh();
@@ -32,20 +32,19 @@ export default function TablePlanets() {
       return Number(planet[selectOptions]) === Number(inputNum);
     });
 
-    return result;
+    setData(result);
   };
 
-  const filterData = (planets) => {
-    const { inputName, buttonClick } = input;
-    if (buttonClick) return filterNumData(planets);
+  const filterNameData = () => {
+    const { inputName } = input;
 
-    const dataFilter = planets.filter((planet) => {
+    const dataFilter = dataInfo.filter((planet) => {
       const { name } = planet;
 
       const filteredName = name.toUpperCase().includes(inputName.toUpperCase());
       return filteredName;
     });
-    return dataFilter;
+    setData(dataFilter);
   };
 
   if (error) return (<h1>Ocorreu um erro, tente recarregar a pagina</h1>);
@@ -54,7 +53,8 @@ export default function TablePlanets() {
   return (
     <div>
       <Filters
-        filterFunc={ filterData }
+        filterFunc={ filterNameData }
+        filterNumFunc={ filterNumData }
         data={ data }
       />
       <table>
@@ -77,7 +77,7 @@ export default function TablePlanets() {
         </thead>
         <tbody>
           {
-            filterData(data).map((planet) => (
+            data.map((planet) => (
               <tr key={ planet.edited }>
                 <td>{ planet.name }</td>
                 <td>{ planet.rotation_period }</td>

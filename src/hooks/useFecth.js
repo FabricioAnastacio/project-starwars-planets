@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AppContext } from '../context/AppContext';
 
 ///
 export default function useFetch(url) {
-  const [data, setData] = useState([]);
+  const { setData } = useContext(AppContext);
+  const [dataInfo, setInfoData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,6 +16,7 @@ export default function useFetch(url) {
       const result = resultAPI.results;
       result.map((obj) => delete obj.residents);
       setData(result);
+      setInfoData(result);
       setLoading(false);
     } catch (e) {
       setError(e);
@@ -21,7 +24,7 @@ export default function useFetch(url) {
   };
 
   return [
-    data,
+    dataInfo,
     loading,
     error,
     refresh,
