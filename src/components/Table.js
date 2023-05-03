@@ -12,6 +12,10 @@ export default function TablePlanets() {
 
   const [input, setInput] = useState({
     inputName: '',
+    inputNum: '0',
+    selectOptions: 'population',
+    condition: 'maior que',
+    buttonClick: false,
   });
 
   useEffect(() => {
@@ -27,8 +31,27 @@ export default function TablePlanets() {
     }));
   }
 
+  const filterNumData = (planets) => {
+    const result = planets.filter((planet) => {
+      const { inputNum, selectOptions, condition } = input;
+
+      if (condition === 'menor que') {
+        return Number(planet[selectOptions]) < Number(inputNum);
+      }
+      if (condition === 'maior que') {
+        return Number(planet[selectOptions]) > Number(inputNum);
+      }
+
+      return Number(planet[selectOptions]) === Number(inputNum);
+    });
+
+    return result;
+  };
+
   const filterData = (planets) => {
-    const { inputName } = input;
+    const { inputName, buttonClick } = input;
+    if (buttonClick) return filterNumData(planets);
+
     const dataFilter = planets.filter((planet) => {
       const { name } = planet;
 
@@ -47,9 +70,51 @@ export default function TablePlanets() {
         data-testid="name-filter"
         type="text"
         name="inputName"
+        placeholder="Digite o nome"
         value={ input.inputName }
         onChange={ chengeOn }
       />
+      <select
+        data-testid="column-filter"
+        name="selectOptions"
+        value={ input.selectOptions }
+        onChange={ chengeOn }
+      >
+        <option>population</option>
+        <option>orbital_period</option>
+        <option>diameter</option>
+        <option>rotation_period</option>
+        <option>surface_water</option>
+      </select>
+      <select
+        data-testid="comparison-filter"
+        name="condition"
+        value={ input.condition }
+        onChange={ chengeOn }
+      >
+        <option>maior que</option>
+        <option>menor que</option>
+        <option>igual a</option>
+      </select>
+      <input
+        data-testid="value-filter"
+        type="number"
+        name="inputNum"
+        placeholder="Digite um numero"
+        value={ input.inputNum }
+        onChange={ chengeOn }
+      />
+      <button
+        data-testid="button-filter"
+        onClick={ () => {
+          setInput((oldState) => ({
+            ...oldState,
+            buttonClick: true,
+          }), filterData(data));
+        } }
+      >
+        Filtrar
+      </button>
       <table>
         <thead>
           <tr>
