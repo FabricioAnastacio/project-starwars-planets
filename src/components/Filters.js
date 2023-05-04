@@ -6,7 +6,7 @@ import { AppContext } from '../context/AppContext';
 export default function Filters(props) {
   const { filterFunc, filterNumFunc, data } = props;
 
-  const { inputName, setName, input, setInput } = useContext(AppContext);
+  const { inputName, setName, input, setInput, optionsFilter } = useContext(AppContext);
 
   useEffect(() => {
     filterFunc();
@@ -41,11 +41,9 @@ export default function Filters(props) {
         value={ input.selectOptions }
         onChange={ chengeOn }
       >
-        <option>population</option>
-        <option>orbital_period</option>
-        <option>diameter</option>
-        <option>rotation_period</option>
-        <option>surface_water</option>
+        {
+          optionsFilter.map((option, index) => <option key={ index }>{ option }</option>)
+        }
       </select>
       <select
         data-testid="comparison-filter"

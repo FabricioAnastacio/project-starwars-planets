@@ -12,11 +12,30 @@ export default function TablePlanets() {
     refresh,
   ] = useFetch('https://swapi.dev/api/planets');
 
-  const { inputName, input, data, setData, filters, setFilter } = useContext(AppContext);
+  const {
+    inputName,
+    input,
+    setInput,
+    data,
+    setData,
+    filters,
+    setFilter,
+    optionsFilter,
+    setOption,
+  } = useContext(AppContext);
 
   useEffect(() => {
     refresh();
   }, []);
+
+  function dellOptionFiter(param) {
+    const newOptions = optionsFilter.filter((option) => option !== param);
+    setOption(newOptions);
+    setInput((oldState) => ({
+      ...oldState,
+      selectOptions: newOptions[0],
+    }));
+  }
 
   const filterNumData = (planets) => {
     const { inputNum, selectOptions, condition } = input;
@@ -30,6 +49,9 @@ export default function TablePlanets() {
 
       return Number(planet[selectOptions]) === Number(inputNum);
     });
+
+    dellOptionFiter(selectOptions);
+
     setFilter((oldState) => ([
       ...oldState,
       `${selectOptions} ${condition} ${inputNum}`,

@@ -16,7 +16,17 @@ function AppProvider({ children }) {
 
   const [filters, setFilter] = useState([]);
 
+  const [optionsFilter, setOption] = useState([
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water',
+  ]);
+
   const values = useMemo(() => ({
+    optionsFilter,
+    setOption,
     input,
     setInput,
     data,
@@ -25,7 +35,7 @@ function AppProvider({ children }) {
     setName,
     filters,
     setFilter,
-  }), [input, data, inputName, filters]);
+  }), [input, data, inputName, filters, optionsFilter]);
 
   return (
     <AppContext.Provider value={ values }>
