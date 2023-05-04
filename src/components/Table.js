@@ -3,6 +3,7 @@ import useFetch from '../hooks/useFecth';
 import './table.css';
 import { AppContext } from '../context/AppContext';
 import Filters from './Filters';
+import OrderData from './OrderData';
 //
 export default function TablePlanets() {
   const [
@@ -126,6 +127,7 @@ export default function TablePlanets() {
         data={ data }
         dellAllFiters={ dellAllFiters }
       />
+      <OrderData />
       {
         filters.map((filter, index) => (
           <p
@@ -165,7 +167,7 @@ export default function TablePlanets() {
           {
             data.map((planet) => (
               <tr key={ planet.edited }>
-                <td>{ planet.name }</td>
+                <td data-testid="planet-name">{ planet.name }</td>
                 <td>{ planet.rotation_period }</td>
                 <td>{ planet.orbital_period }</td>
                 <td>{ planet.diameter }</td>
