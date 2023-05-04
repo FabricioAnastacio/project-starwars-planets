@@ -4,9 +4,15 @@ import { AppContext } from '../context/AppContext';
 
 //
 export default function Filters(props) {
-  const { filterFunc, filterNumFunc, data } = props;
+  const { filterFunc, filterNumFunc, data, dellAllFiters } = props;
 
-  const { inputName, setName, input, setInput, optionsFilter } = useContext(AppContext);
+  const {
+    inputName,
+    setName,
+    input,
+    setInput,
+    optionsFilter,
+  } = useContext(AppContext);
 
   useEffect(() => {
     filterFunc();
@@ -69,6 +75,12 @@ export default function Filters(props) {
       >
         Filtrar
       </button>
+      <button
+        data-testid="button-remove-filters"
+        onClick={ dellAllFiters }
+      >
+        Remover todas filtragens
+      </button>
     </div>
   );
 }
@@ -76,6 +88,7 @@ export default function Filters(props) {
 Filters.propTypes = {
   filterFunc: PropTypes.func.isRequired,
   filterNumFunc: PropTypes.func.isRequired,
+  dellAllFiters: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({}).isRequired,
   ).isRequired,

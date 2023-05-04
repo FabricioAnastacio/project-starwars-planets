@@ -28,7 +28,7 @@ export default function TablePlanets() {
     refresh();
   }, []);
 
-  function dellOptionFiter(param) {
+  function removeOptionFiter(param) {
     const newOptions = optionsFilter.filter((option) => option !== param);
     setOption(newOptions);
     setInput((oldState) => ({
@@ -50,7 +50,7 @@ export default function TablePlanets() {
       return Number(planet[selectOptions]) === Number(inputNum);
     });
 
-    dellOptionFiter(selectOptions);
+    removeOptionFiter(selectOptions);
 
     setFilter((oldState) => ([
       ...oldState,
@@ -69,6 +69,52 @@ export default function TablePlanets() {
     setData(dataFilter);
   };
 
+  function verficNewData(newList) {
+    if (newList.length === 0) return [dataInfo];
+
+    const DATA = newList.map((filter) => {
+      const coditionsFilter = filter.split(' ');
+      const numInFilter = coditionsFilter[coditionsFilter.length - 1];
+      const filterIsAdd = coditionsFilter[0];
+
+      const newDATA = dataInfo.filter((planet) => {
+        if (coditionsFilter[1] === 'maior') {
+          return Number(planet[filterIsAdd]) > Number(numInFilter);
+        }
+        if (coditionsFilter[1] === 'menor') {
+          return Number(planet[filterIsAdd]) < Number(numInFilter);
+        }
+        return Number(planet[filterIsAdd]) === Number(numInFilter);
+      });
+      return newDATA;
+    });
+    return DATA;
+  }
+
+  const dellFilter = (filter) => {
+    const coditionsFilter = filter.split(' ');
+    const filterIsAdd = coditionsFilter[0];
+    const addOptionFilters = [...optionsFilter, filterIsAdd];
+
+    const newListFiters = filters.filter((rmFilter) => rmFilter !== filter);
+
+    setData(...verficNewData(newListFiters));
+    setFilter(newListFiters);
+    setOption(addOptionFilters);
+  };
+
+  const dellAllFiters = () => {
+    setData(dataInfo);
+    setFilter([]);
+    setOption([
+      'population',
+      'orbital_period',
+      'diameter',
+      'rotation_period',
+      'surface_water',
+    ]);
+  };
+
   if (error) return (<h1>Ocorreu um erro, tente recarregar a pagina</h1>);
   if (loading) return (<h1>Carregando...</h1>);
 
@@ -78,10 +124,25 @@ export default function TablePlanets() {
         filterFunc={ filterNameData }
         filterNumFunc={ filterNumData }
         data={ data }
+        dellAllFiters={ dellAllFiters }
       />
-      <p>
-        { ` ${filters} ` }
-      </p>
+      {
+        filters.map((filter, index) => (
+          <p
+            data-testid="filter"
+            key={ index }
+          >
+            { filter }
+            {' '}
+            <button
+              key={ index }
+              onClick={ () => dellFilter(filter) }
+            >
+              X
+            </button>
+          </p>
+        ))
+      }
       <table>
         <thead>
           <tr>
