@@ -6,14 +6,18 @@ import { AppContext } from '../context/AppContext';
 export default function Filters(props) {
   const { filterFunc, filterNumFunc, data } = props;
 
-  const { input, setInput } = useContext(AppContext);
+  const { inputName, setName, input, setInput } = useContext(AppContext);
 
   useEffect(() => {
     filterFunc();
-  }, [input]);
+  }, [inputName]);
 
   function chengeOn({ target }) {
     const { value, name } = target;
+
+    if (name === 'inputName') {
+      setName(value);
+    }
 
     setInput((oldState) => ({
       ...oldState,
@@ -28,7 +32,7 @@ export default function Filters(props) {
         type="text"
         name="inputName"
         placeholder="Digite o nome"
-        value={ input.inputName }
+        value={ inputName }
         onChange={ chengeOn }
       />
       <select

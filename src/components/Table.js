@@ -12,16 +12,15 @@ export default function TablePlanets() {
     refresh,
   ] = useFetch('https://swapi.dev/api/planets');
 
-  const { input, data, setData } = useContext(AppContext);
+  const { inputName, input, data, setData, filters, setFilter } = useContext(AppContext);
 
   useEffect(() => {
     refresh();
   }, []);
 
   const filterNumData = (planets) => {
+    const { inputNum, selectOptions, condition } = input;
     const result = planets.filter((planet) => {
-      const { inputNum, selectOptions, condition } = input;
-
       if (condition === 'menor que') {
         return Number(planet[selectOptions]) < Number(inputNum);
       }
@@ -31,13 +30,14 @@ export default function TablePlanets() {
 
       return Number(planet[selectOptions]) === Number(inputNum);
     });
-
+    setFilter((oldState) => ([
+      ...oldState,
+      `${selectOptions} ${condition} ${inputNum}`,
+    ]));
     setData(result);
   };
 
   const filterNameData = () => {
-    const { inputName } = input;
-
     const dataFilter = dataInfo.filter((planet) => {
       const { name } = planet;
 
@@ -57,6 +57,9 @@ export default function TablePlanets() {
         filterNumFunc={ filterNumData }
         data={ data }
       />
+      <p>
+        { ` ${filters} ` }
+      </p>
       <table>
         <thead>
           <tr>
