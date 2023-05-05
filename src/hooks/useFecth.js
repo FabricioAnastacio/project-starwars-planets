@@ -17,9 +17,10 @@ export default function useFetch(url) {
       result.map((obj) => delete obj.residents);
       setData(result);
       setInfoData(result);
-      setLoading(false);
     } catch (e) {
       setError(e);
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -116,8 +116,8 @@ export default function TablePlanets() {
     ]);
   };
 
-  if (error) return (<h1>Ocorreu um erro, tente recarregar a pagina</h1>);
   if (loading) return (<h1>Carregando...</h1>);
+  if (error) return (<h1>Ocorreu um erro, tente recarregar a pagina</h1>);
 
   return (
     <div>
