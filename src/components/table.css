@@ -3,9 +3,38 @@ table {
   border-spacing: 0;
 }
 
+.textDellButton {
+  background-color: rgba(162, 255, 0, 0.5);
+  border: 1px solid rgb(13, 158, 0);
+  border-radius: 8px;
+  font-size: 15.5px;
+  margin: 5px;
+  margin-right: 1285px;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+.dellButton {
+  background-color: rgb(255, 0, 0);
+  border-radius: 6px;
+  color: white;
+  font-size: 10px;
+  font-weight: bolder;
+  padding: 4px 6px;
+}
+
+.dellButton:hover {
+  background-color: rgb(255, 3, 3);
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  font-weight: bolder;
+  padding: 4px 6px;
+}
+
 th, td {
   border: 1px solid black;
   font-size: 15px;
-  padding: 10px 29px;
+  padding: 5px 10px;
   text-align: center;
 }

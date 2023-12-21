@@ -132,11 +132,13 @@ export default function TablePlanets() {
         filters.map((filter, index) => (
           <p
             data-testid="filter"
+            className="textDellButton"
             key={ index }
           >
             { filter }
             {' '}
             <button
+              className="dellButton"
               key={ index }
               onClick={ () => dellFilter(filter) }
             >
