@@ -1,0 +1,70 @@
+.header_filter {
+  background-color: #000000;
+  margin: 30px 20px 0;
+  border-radius: 40px 40px 0 0;
+  padding: 20px;
+}
+
+.input_name {
+  margin: 10px 0px;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.input_name:hover {
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: 2px solid #FFCD29;
+  padding: 7px;
+}
+
+.filters {
+  background-color: #000000;
+}
+
+.filters input {
+  margin: 10px 20px;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.filters input:hover {
+  margin: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid #FFCD29;
+  padding: 5px;
+}
+
+.filters select {
+  margin: 0px 20px;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.filters select:hover {
+  margin: 0px 20px;
+  border-radius: 7px;
+  border: 1px solid #FFCD29;
+  padding: 5px;
+}
+
+.filters button {
+  margin: 0px 20px;
+  border-radius: 8px;
+  border: 3px solid #bbbbbb;
+  padding: 8px;
+}
+
+.filters button:hover {
+  margin: 0px 20px;
+  border-radius: 8px;
+  border: 4px solid #FFCD29;
+  padding: 9px;
+}
+
+.filters button:active {
+  margin: 0px 20px;
+  border-radius: 8px;
+  border: 3px solid #FFCD29;
+  padding: 8px;
+}

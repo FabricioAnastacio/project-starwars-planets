@@ -116,8 +116,19 @@ export default function TablePlanets() {
     ]);
   };
 
-  if (loading) return (<h1>Carregando...</h1>);
-  if (error) return (<h1>Ocorreu um erro, tente recarregar a pagina</h1>);
+  if (loading) {
+    return (
+      <div className="loading">
+        <img className="img_sw" src="logo.svg" alt="star wars" />
+        <h1>Carregando...</h1>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <h1 className="loading_error">Ocorreu um erro, tente recarregar a pagina</h1>
+    );
+  }
 
   return (
     <div>

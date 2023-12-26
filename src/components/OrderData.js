@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import './orderData.css';
 
 //
 export default function OrderData() {
@@ -36,7 +37,7 @@ export default function OrderData() {
   };
 
   return (
-    <div>
+    <div className="header_order">
       <select
         data-testid="column-sort"
         name="column"
