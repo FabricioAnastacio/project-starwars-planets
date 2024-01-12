@@ -50,23 +50,28 @@ export default function OrderData() {
         <option>rotation_period</option>
         <option>surface_water</option>
       </select>
-      <input
-        data-testid="column-sort-input-asc"
-        name="sort"
-        type="radio"
-        value="ASC"
-        onChange={ configOrder }
-      />
-      Ascendente
-      <input
-        data-testid="column-sort-input-desc"
-        name="sort"
-        type="radio"
-        value="DESC"
-        onChange={ configOrder }
-      />
-      Descendente
+      <div className="input_Asc">
+        <input
+          data-testid="column-sort-input-asc"
+          name="sort"
+          type="radio"
+          value="ASC"
+          onChange={ configOrder }
+        />
+        Ascendente
+      </div>
+      <div className="input_desc">
+        <input
+          data-testid="column-sort-input-desc"
+          name="sort"
+          type="radio"
+          value="DESC"
+          onChange={ configOrder }
+        />
+        Descendente
+      </div>
       <button
+        className="button_Order"
         data-testid="column-sort-button"
         onClick={ clickedOrder }
       >

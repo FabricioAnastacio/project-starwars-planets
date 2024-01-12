@@ -139,25 +139,27 @@ export default function TablePlanets() {
         dellAllFiters={ dellAllFiters }
       />
       <OrderData />
-      {
-        filters.map((filter, index) => (
-          <p
-            data-testid="filter"
-            className="textDellButton"
-            key={ index }
-          >
-            { filter }
-            {' '}
-            <button
-              className="dellButton"
+      <div className="container_filters">
+        {
+          filters.map((filter, index) => (
+            <p
+              data-testid="filter"
+              className="textDellButton"
               key={ index }
-              onClick={ () => dellFilter(filter) }
             >
-              X
-            </button>
-          </p>
-        ))
-      }
+              { filter }
+              {' '}
+              <button
+                className="dellButton"
+                key={ index }
+                onClick={ () => dellFilter(filter) }
+              >
+                X
+              </button>
+            </p>
+          ))
+        }
+      </div>
       <table>
         <thead>
           <tr>

@@ -1,14 +1,22 @@
 .header_filter {
   background-color: #000000;
   margin: 30px 20px 0;
-  border-radius: 40px 40px 0 0;
+  border-radius: 10px 10px 0 0;
   padding: 20px;
+}
+
+.img_sw_filter {
+  background-color: #000000;
+  position: absolute;
+  width: 200px;
+  margin-left: 182vb;
 }
 
 .input_name {
   margin: 10px 0px;
   border-radius: 10px;
   padding: 7px;
+  background-color: white;
 }
 
 .input_name:hover {
@@ -26,6 +34,7 @@
   margin: 10px 20px;
   border-radius: 7px;
   padding: 5px;
+  background-color: white;
 }
 
 .filters input:hover {
@@ -50,21 +59,36 @@
 
 .filters button {
   margin: 0px 20px;
-  border-radius: 8px;
   border: 3px solid #bbbbbb;
+  border-radius: 15px;
   padding: 8px;
+  background-color: white;
 }
 
-.filters button:hover {
+.filters button:nth-last-child(2):hover {
   margin: 0px 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   border: 4px solid #FFCD29;
   padding: 9px;
 }
 
-.filters button:active {
+.filters button:nth-last-child(2):active {
   margin: 0px 20px;
-  border-radius: 8px;
-  border: 3px solid #FFCD29;
+  border-radius: 15px;
+  border: 3px solid #000000;
+  padding: 8px;
+}
+
+.filters button:nth-last-child(1):hover {
+  margin: 0px 20px;
+  border-radius: 15px;
+  border: 4px solid #ff2929;
+  padding: 9px;
+}
+
+.filters button:nth-last-child(1):active {
+  margin: 0px 20px;
+  border-radius: 15px;
+  border: 3px solid #000000;
   padding: 8px;
 }

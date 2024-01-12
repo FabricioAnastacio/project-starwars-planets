@@ -1,5 +1,5 @@
 *{
-  background-color: #DDDDDD;
+  background-color: #b6b6b6;
 }
 
 table {
@@ -15,14 +15,19 @@ table {
   margin: -50px;
 }
 
+.container_filters {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 20px 20px 20px;
+  display: flex;
+}
+
 .textDellButton {
-  background-color: rgba(162, 255, 0, 0.5);
-  border: 1px solid rgb(13, 158, 0);
+  background-color: #ffe81f;
   border-radius: 8px;
-  font-size: 15.5px;
+  padding: 2px 10px 2px 10px;
   margin: 5px;
-  margin-right: 1285px;
-  padding: 3px 5px;
   text-align: center;
 }
 
