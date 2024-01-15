@@ -1,5 +1,5 @@
 .header_filter {
-  background-color: #000000;
+  background: url("../../public/background-dark.jpeg");
   margin: 30px 20px 0;
   border-radius: 10px 10px 0 0;
   padding: 20px;

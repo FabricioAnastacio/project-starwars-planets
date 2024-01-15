@@ -12,6 +12,7 @@ table {
 }
 
 .loading h1{
+  font-family: "starjhol";
   margin: -50px;
 }
 
@@ -50,8 +51,24 @@ table {
 }
 
 th, td {
-  border: 1px solid black;
+  border: 1px solid rgba(155, 155, 155, 0.349);
   font-size: 15px;
   padding: 5px 10px;
   text-align: center;
+}
+
+th {
+  background-color: #757575;
+  color: white;
+  font-family: "starjhol";
+  line-height: 20px;
+  padding: 15px;
+}
+
+td {
+  background-color: white;
+}
+
+td:hover {
+  background-color: #ffea31;
 }
