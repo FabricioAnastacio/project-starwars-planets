@@ -86,7 +86,7 @@
   padding: 9px;
 }
 
-.filters button:nth-last-child(1):active {
+.filters button:nth-last-child( 1 ):active {
   border: 3px solid black;
   border-radius: 15px;
   margin: 0 20px;
