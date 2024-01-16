@@ -8,6 +8,7 @@ table {
 }
 
 .loading {
+  font-family: 'starjhol';
   text-align: center;
 }
 
@@ -57,6 +58,7 @@ th, td {
 th {
   background-color: #757575;
   color: white;
+  font-family: 'starjhol';
   line-height: 20px;
   padding: 15px;
 }
