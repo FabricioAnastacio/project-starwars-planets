@@ -63,8 +63,32 @@ describe('1 - Testa se existe opções para filtros', () => {
   it('verifica se existe um botão para ativar o filtro com o nome "Filtrar"', async () => {
     render(<App />);
 
-    const buttonFilter = await screen.findByRole('button', { name: 'Filtrar' })
+    const buttonFilter = await screen.findByRole('button', { name: 'Filtrar' });
 
     expect(buttonFilter).toBeInTheDocument();
+  });
+
+  it('verifica se é possivel filtrar', async () => {
+    render(<App />);
+
+    const buttonFilter = await screen.findByRole('button', { name: 'Filtrar' });
+    const selectCategory = await screen.findByTestId('column-filter');
+    const selectCondition = await screen.findByTestId('comparison-filter');
+    const numberImput = await screen.findByRole('spinbutton');
+
+    userEvent.selectOptions(selectCategory ,['rotation_period']);
+    userEvent.selectOptions(selectCondition ,['igual a']);
+    userEvent.type(numberImput, '12');
+    userEvent.click(buttonFilter);
+
+    screen.getByRole('cell', { name: 'Bespin' } )
+  });
+
+  it('verifica se existe um botão para deletar os filtros com o nome "Remover todas filtragens"', async () => {
+    render(<App />);
+
+    const buttonRmFilter = await screen.findByRole('button', { name: 'Remover todas filtragens' });
+
+    expect(buttonRmFilter).toBeInTheDocument();
   });
 })

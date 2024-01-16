@@ -34,7 +34,6 @@ export default function Filters(props) {
 
   return (
     <div className="header_filter">
-      <img className="img_sw_filter" src="logo.svg" alt="star wars" />
       <input
         data-testid="name-filter"
         className="input_name"
