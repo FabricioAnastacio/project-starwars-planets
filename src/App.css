@@ -1,18 +1,3 @@
 .App {
   text-align: center;
 }
-
-@font-face {
-  font-family: 'starjedi';
-  src: url('../public/fonts/star-jedi/Starjedi.ttf');
-}
-
-@font-face {
-  font-family: 'starjhol';
-  src: url('../public/fonts/star-jedi/Starjhol.ttf');
-}
-
-@font-face {
-  font-family: 'starjout';
-  src: url('../public/fonts/star-jedi/Starjout.ttf');
-}

@@ -1,52 +1,52 @@
 .header_order {
-	background: url("../../public/background-dark.jpeg");
-  border-radius: 0px 0px 10px 10px;
+	background: url('../../public/background-dark.jpeg');
+  border-radius: 0 0 10px 10px;
   color: #ffcd29;
   display: flex;
   justify-content: end;
-  margin: 0px 20px 20px;
-  padding: 0 0 15px 0;
+  margin: 0 20px 20px;
+  padding: 0 0 15px;
 }
 
 select {
   background-color: white;
   border-radius: 7px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 5px;
 }
 
 select:hover {
-  border: 1px solid #FFCD29;
+  border: 1px solid #ffcd29;
   border-radius: 7px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 5px;
 }
 
 .button_Order {
   background-color: white;
-  border: 3px solid #bbbbbb;
+  border: 3px solid #bbb;
   border-radius: 15px;
-  margin: 0px 20px 5px;
+  margin: 0 20px 5px;
   padding: 8px;
   position: absolute;
 }
 
 .button_Order:hover {
-  border: 4px solid #FFCD29;
+  border: 4px solid #ffcd29;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 9px;
 }
 
 .button_Order:active {
-  border: 3px solid #000000;
+  border: 3px solid black;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 8px;
 }
 
 .input_Asc {
-  background-color: #000000;
+  background-color: black;
 }
 
 .input_Asc input {
@@ -56,7 +56,7 @@ select:hover {
 }
 
 .input_desc {
-  background-color: #000000;
+  background-color: black;
   margin: 0 7% 0 1%;
 }
 

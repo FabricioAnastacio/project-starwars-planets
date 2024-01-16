@@ -1,12 +1,12 @@
 .header_filter {
-  background: url("../../public/background-dark.jpeg");
+  background: url('../../public/background-dark.jpeg');
   border-radius: 10px 10px 0 0;
   margin: 30px 20px 0;
   padding: 20px;
 }
 
 .img_sw_filter {
-  background-color: #000000;
+  background-color: black;
   margin-left: 182vb;
   position: absolute;
   width: 200px;
@@ -15,19 +15,19 @@
 .input_name {
   background-color: white;
   border-radius: 10px;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 7px;
 }
 
 .input_name:hover {
-  border: 2px solid #FFCD29;
+  border: 2px solid #ffcd29;
   border-radius: 10px;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 7px;
 }
 
 .filters {
-  background-color: #000000;
+  background-color: black;
 }
 
 .filters input {
@@ -38,7 +38,7 @@
 }
 
 .filters input:hover {
-  border: 1px solid #FFCD29;
+  border: 1px solid #ffcd29;
   border-radius: 7px;
   margin: 10px 20px;
   padding: 5px;
@@ -46,49 +46,49 @@
 
 .filters select {
   border-radius: 7px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 5px;
 }
 
 .filters select:hover {
-  border: 1px solid #FFCD29;
+  border: 1px solid #ffcd29;
   border-radius: 7px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 5px;
 }
 
 .filters button {
   background-color: white;
-  border: 3px solid #bbbbbb;
+  border: 3px solid #bbb;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 8px;
 }
 
-.filters button:nth-last-child(2):hover {
-  border: 4px solid #FFCD29;
+.filters button:nth-last-child( 2 ):hover {
+  border: 4px solid #ffcd29;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 9px;
 }
 
-.filters button:nth-last-child(2):active {
-  border: 3px solid #000000;
+.filters button:nth-last-child( 2 ):active {
+  border: 3px solid black;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 8px;
 }
 
-.filters button:nth-last-child(1):hover {
+.filters button:nth-last-child( 1 ):hover {
   border: 4px solid #ff2929;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 9px;
 }
 
 .filters button:nth-last-child(1):active {
-  border: 3px solid #000000;
+  border: 3px solid black;
   border-radius: 15px;
-  margin: 0px 20px;
+  margin: 0 20px;
   padding: 8px;
 }
