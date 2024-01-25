@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AppContext } from '../context/AppContext';
-import './filter.css';
+import '../styles/filter.css';
 
 //
 export default function Filters(props) {

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import useFetch from '../hooks/useFecth';
-import './table.css';
+import '../styles/table.css';
 import { AppContext } from '../context/AppContext';
 import Filters from './Filters';
 import OrderData from './OrderData';

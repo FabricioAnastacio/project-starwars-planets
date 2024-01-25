@@ -1,10 +1,31 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Bem vindo ao repositório do projeto Star Wars Planets Search!
+
+![img](star_wars_logo.png)
+
+Este projeto se trata de uma aplicação FrontEnd desenvolvido com **React**. Seu proposito é mostrar uma tabela com os planetas do universo de Star Wars.
+Com varios filtros e de facil entendimento.
+
+# Tecnologias
+
+Nesse projeto foi utilizado:
+
+* Linguagem [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript);
+* Biblioteca [React](https://react.dev/);
+* Estilização [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS);
+* Framework de Testes [Jest](https://jestjs.io/pt-BR/);
+
+# Dados sobre o projeto
+
+Este projeto não é de 100% autoria minha, parte deste foi desenvolvida pela [Trybe](https://www.betrybe.com/) os arquivos desenvolvidos por mim foram:
+
+- ./src/components
+- ./src/context
+- ./src/hooks
+- ./src/styles
+- ./src/tests
+- ./src/App.css
+- ./src/App.js
+- ./src/index.js
+- ./src/index.css
+
+Os demais arquivos faram desenvolvidos pela Trybe.

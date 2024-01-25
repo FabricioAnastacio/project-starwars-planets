@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
-import './orderData.css';
+import '../styles/orderData.css';
 
 //
 export default function OrderData() {
