@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/project-starwars-planets/static/css/main.fe0b05bb.css",
+    "main.js": "/project-starwars-planets/static/js/main.04e17ddc.js",
+    "static/media/background-dark.jpeg": "/project-starwars-planets/static/media/background-dark.8c261a3a00cb876f3ab7.jpeg",
+    "static/media/Starjout.ttf": "/project-starwars-planets/static/media/Starjout.f7accd2946bcbf115782.ttf",
+    "static/media/Starjhol.ttf": "/project-starwars-planets/static/media/Starjhol.c247ee6825d52f9d0862.ttf",
+    "static/media/Starjedi.ttf": "/project-starwars-planets/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "index.html": "/project-starwars-planets/index.html",
+    "main.fe0b05bb.css.map": "/project-starwars-planets/static/css/main.fe0b05bb.css.map",
+    "main.04e17ddc.js.map": "/project-starwars-planets/static/js/main.04e17ddc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe0b05bb.css",
+    "static/js/main.04e17ddc.js"
+  ]
+}
